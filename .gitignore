@@ -1,0 +1,35 @@
+## .NET
+bin/
+obj/
+*.user
+*.suo
+.vs/
+*.userprefs
+
+## Build outputs
+out/
+publish/
+/app/
+
+## Environment
+.env
+.env.local
+appsettings.local.json
+
+## Test results
+testresults/
+coverage/
+*.trx
+*.xml
+
+## Docker
+docker-compose.override.yml
+
+## OS
+.DS_Store
+Thumbs.db
+
+## Rider / VS Code
+.idea/
+.vscode/
+*.swp

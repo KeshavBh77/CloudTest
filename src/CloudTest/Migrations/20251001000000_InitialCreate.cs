@@ -1,11 +1,14 @@
 using System;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 namespace CloudTest.Migrations
 {
-    /// <inheritdoc />
+    [DbContext(typeof(CloudTest.Data.AppDbContext))]
+    [Migration("20251001000000_InitialCreate")]
     public partial class InitialCreate : Migration
     {
         /// <inheritdoc />

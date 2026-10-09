@@ -1,0 +1,49 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <IsPackable>false</IsPackable>
+    <!-- coverlet for 84% coverage reporting -->
+    <CollectCoverage>true</CollectCoverage>
+    <CoverletOutputFormat>cobertura</CoverletOutputFormat>
+    <CoverletOutput>./coverage/</CoverletOutput>
+    <Threshold>80</Threshold>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\CloudTest\CloudTest.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- xUnit — primary test framework -->
+    <PackageReference Include="xunit"                         Version="2.6.1" />
+    <PackageReference Include="xunit.runner.visualstudio"     Version="2.5.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NET.Test.Sdk"        Version="17.7.2" />
+
+    <!-- NUnit — secondary framework (demonstrates both per resume) -->
+    <PackageReference Include="NUnit"                         Version="3.14.0" />
+    <PackageReference Include="NUnit3TestAdapter"             Version="4.5.0" />
+
+    <!-- Mocking -->
+    <PackageReference Include="Moq"                           Version="4.20.70" />
+
+    <!-- Coverage -->
+    <PackageReference Include="coverlet.collector"            Version="6.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="coverlet.msbuild"              Version="6.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+
+    <!-- EF InMemory for repository-level tests -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.0" />
+  </ItemGroup>
+
+</Project>
